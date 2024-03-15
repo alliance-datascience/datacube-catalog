@@ -4,7 +4,7 @@
   "id": "chirps",
   "properties": {
     "zarr_store": "s3://climate-action-datalake/zone=raw/source=chirps/variable=precipitation.zarr/",
-    "datetime": "2024-03-14T21:16:16.142340Z"
+    "datetime": "2024-03-15T20:11:06.299112Z"
   },
   "geometry": null,
   "links": [
@@ -24,7 +24,34 @@
       "href": "s3://climate-action-datalake/zone=raw/source=chirps/variable=precipitation.zarr/",
       "type": "application/vnd+zarr",
       "title": "Data cube chirps",
-      "description": "Historical chirps transformed into cloud native format Zarr"
+      "description": "Historical chirps global data transformed into cloud native format Zarr",
+      "authentication_enabled": "yes",
+      "source": "https://data.chc.ucsb.edu/products/CHIRPS-2.0/global_daily/tifs/p05",
+      "update_frecuency": "Monthy",
+      "resolution": "0.05 x 0.05",
+      "dimensions": [
+        {
+          "lat": "latitud",
+          "description": "latitud of the data"
+        },
+        {
+          "lon": "longitud",
+          "description": "longitud of the data"
+        },
+        {
+          "time": "date",
+          "description": "The date of the registry at daily level",
+          "format": "yyyy-mm-dd"
+        }
+      ],
+      "variables": [
+        {
+          "precipitation": "precipitation",
+          "description": "Precipitation of the geo point per date",
+          "units": "mm"
+        }
+      ],
+      "transformations": "From geotiff to zarr"
     }
   },
   "stac_extensions": []
