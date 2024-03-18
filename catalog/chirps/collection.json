@@ -1,0 +1,44 @@
+{
+  "type": "Collection",
+  "id": "chirps",
+  "stac_version": "1.0.0",
+  "description": "Data from chirps",
+  "links": [
+    {
+      "rel": "root",
+      "href": "../catalog.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./precipitation/precipitation.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "parent",
+      "href": "../catalog.json",
+      "type": "application/json"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -49.98,
+          -180,
+          49.98,
+          180
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "1980-01-01T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "license": "proprietary"
+}

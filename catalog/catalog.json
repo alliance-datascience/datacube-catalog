@@ -10,8 +10,8 @@
       "type": "application/json"
     },
     {
-      "rel": "item",
-      "href": "./chirps/chirps.json",
+      "rel": "child",
+      "href": "./chirps/collection.json",
       "type": "application/json"
     }
   ]
