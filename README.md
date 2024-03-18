@@ -21,4 +21,4 @@ pip install pystac_client
 install.packages("rstac")
 ```
 
-This is only a service for query the available datasource and their metadata[^note].
+This is only a service for query the available datasource and their metadata [^1]
