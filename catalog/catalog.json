@@ -1,8 +1,8 @@
 {
   "type": "Catalog",
-  "id": "datacube-catalog",
+  "id": "cgiar-datacube-catalog",
   "stac_version": "1.0.0",
-  "description": "Datacube catalog stored in S3",
+  "description": "A centralized repository for cloud-native geospatial data in Zarr format. Offers discovery, access, and metadata management for climate and agriculture datasets. Includes data from CHIRPS, AGERA, and other sources. Standardized units ensure data comparability. Enables search by spatial, temporal, and variable criteria. ",
   "links": [
     {
       "rel": "root",
@@ -12,6 +12,11 @@
     {
       "rel": "child",
       "href": "./chirps/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "child",
+      "href": "./agera/collection.json",
       "type": "application/json"
     }
   ]

@@ -1,8 +1,8 @@
 {
   "type": "Collection",
-  "id": "chirps",
+  "id": "agera",
   "stac_version": "1.0.0",
-  "description": "Daily data extrated of chirps transformed to a zarr format",
+  "description": "Historical data of agera based on version 1.1",
   "links": [
     {
       "rel": "root",
@@ -11,7 +11,12 @@
     },
     {
       "rel": "item",
-      "href": "./precipitation/precipitation.json",
+      "href": "./relativehumidity/relativehumidity.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./windSpeed/windSpeed.json",
       "type": "application/json"
     },
     {
@@ -24,9 +29,9 @@
     "spatial": {
       "bbox": [
         [
-          -49.98,
+          -90,
           -180,
-          49.98,
+          90,
           180
         ]
       ]

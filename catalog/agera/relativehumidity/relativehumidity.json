@@ -1,10 +1,10 @@
 {
   "type": "Feature",
   "stac_version": "1.0.0",
-  "id": "precipitation",
+  "id": "relativehumidity",
   "properties": {
-    "zarr_store": "s3://climate-action-datalake/zone=raw/source=chirps/variable=precipitation.zarr/",
-    "datetime": "2024-08-01T19:33:41.278753Z"
+    "zarr_store": "s3://climate-action-datalake/zone=raw/source=agera5-v1-1/variable=relativehumidity.zarr/",
+    "datetime": "2024-08-01T19:39:50.266710Z"
   },
   "geometry": null,
   "links": [
@@ -25,15 +25,16 @@
     }
   ],
   "assets": {
-    "chips-precipitation-zarr": {
+    "agera-relativehumidity-zarr": {
       "href": "s3://climate-action-datalake/zone=raw/source=chirps/variable=precipitation.zarr/",
       "type": "application/vnd+zarr",
-      "title": "Data cube chirps",
-      "description": "Global Historical CHIRPS Data in Zarr",
+      "title": "Agera Relative Humidity",
+      "description": "A measure of the amount of water vapor present in the air compared to the maximum amount of water vapor the air can hold at a specific temperature and pressure. Derived from Agera's dataset, this variable provides insights into atmospheric moisture conditions",
       "authentication_enabled": "yes",
-      "source": "https://data.chc.ucsb.edu/products/CHIRPS-2.0/global_daily/tifs/p05",
+      "source": "https://cds.climate.copernicus.eu/cdsapp#!/dataset/sis-agrometeorological-indicators?tab=form",
       "update_frecuency": "Monthy",
-      "resolution": "0.05 x 0.05",
+      "name_r_integration": "agera5-relativehumidity",
+      "resolution": "0.1 x 0.1",
       "dimensions": [
         {
           "lat": "latitud",
@@ -51,14 +52,14 @@
       ],
       "variables": [
         {
-          "precipitation": "precipitation",
-          "description": "Precipitation of the geo point per date",
-          "units": "mm"
+          "Relative_Humidity_2m_12h": "Relative_Humidity_2m_12h",
+          "description": "Average relative humidity measured at a height of 2 meters above the ground over a 12-hour period",
+          "units": "%"
         }
       ],
-      "transformations": "From geotiff to zarr"
+      "transformations": "From NETCDF to zarr"
     }
   },
   "stac_extensions": [],
-  "collection": "chirps"
+  "collection": "agera"
 }

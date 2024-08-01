@@ -1,10 +1,10 @@
 {
   "type": "Feature",
   "stac_version": "1.0.0",
-  "id": "precipitation",
+  "id": "windSpeed",
   "properties": {
-    "zarr_store": "s3://climate-action-datalake/zone=raw/source=chirps/variable=precipitation.zarr/",
-    "datetime": "2024-08-01T19:33:41.278753Z"
+    "zarr_store": "s3://climate-action-datalake/zone=raw/source=agera5-v1-1/variable=windSpeed.zarr/",
+    "datetime": "2024-08-01T19:39:50.266710Z"
   },
   "geometry": null,
   "links": [
@@ -25,15 +25,16 @@
     }
   ],
   "assets": {
-    "chips-precipitation-zarr": {
+    "agera-windspeed-zarr": {
       "href": "s3://climate-action-datalake/zone=raw/source=chirps/variable=precipitation.zarr/",
       "type": "application/vnd+zarr",
-      "title": "Data cube chirps",
-      "description": "Global Historical CHIRPS Data in Zarr",
+      "title": "Agera Wind Speed",
+      "description": "This dataset represents the wind speed measured at a specific height above the ground, derived from Agera's observations",
       "authentication_enabled": "yes",
-      "source": "https://data.chc.ucsb.edu/products/CHIRPS-2.0/global_daily/tifs/p05",
+      "source": "https://cds.climate.copernicus.eu/cdsapp#!/dataset/sis-agrometeorological-indicators?tab=form",
       "update_frecuency": "Monthy",
-      "resolution": "0.05 x 0.05",
+      "name_r_integration": "agera5-windSpeed",
+      "resolution": "0.1 x 0.1",
       "dimensions": [
         {
           "lat": "latitud",
@@ -51,14 +52,14 @@
       ],
       "variables": [
         {
-          "precipitation": "precipitation",
-          "description": "Precipitation of the geo point per date",
-          "units": "mm"
+          "Wind_Speed_10m_Mean": "Wind_Speed_10m_Mean",
+          "description": "This represents the average wind speed measured at a height of 10 meters above the ground over a specific time period",
+          "units": "m/s"
         }
       ],
-      "transformations": "From geotiff to zarr"
+      "transformations": "From NETCDF to zarr"
     }
   },
   "stac_extensions": [],
-  "collection": "chirps"
+  "collection": "agera"
 }
